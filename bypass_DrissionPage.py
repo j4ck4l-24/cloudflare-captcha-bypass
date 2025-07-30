@@ -5,6 +5,7 @@ import time
 def bypass_cloudflare_protection():
     options = ChromiumOptions()
     options.set_argument('--incognito')
+    # options.set_argument('--headless')
     browser = ChromiumPage(options)
     browser.get('https://www.crunchbase.com/browser-extension-captcha')
     
@@ -32,7 +33,7 @@ def bypass_cloudflare_protection():
                             initial_shadow_root = container_div.shadow_root.child()
                             print("sss", initial_shadow_root) # verified and iframe loaded with correct challenge. body --> input[checkbox] should be next
                             body = initial_shadow_root("tag:body")
-                            # print("bbbbb", body) nothing getting printed
+                            print("bbbbb", body) #nothing getting printed
                             button = body.shadow_root("tag:input")
                             if button:
                                 button.click()
