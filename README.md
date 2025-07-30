@@ -1,5 +1,6 @@
 # Cloudflare Captcha Bypass 
 
+Status: Working for both the urls mentioned in the task.
 
 ## Patchright
 
