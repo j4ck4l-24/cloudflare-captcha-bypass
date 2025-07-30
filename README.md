@@ -43,6 +43,21 @@ Here’s how it worked:
 5. Inside the iframe, it traverses to the `<body>` tag and accesses its own shadow root.
 6. Within that, it locates the actual checkbox input (`<input type="checkbox">`) used for the Turnstile challenge.
 7. The checkbox is clicked programmatically. After some time, the challenge resolves and we get the cf_clearance cookie.
+
+```mermaid
+flowchart TD
+    A[Start at outer page] --> B["Find <input name='cf-turnstile-response'>"]
+    B --> C["Get parent element (Turnstile container)"]
+    C --> D["Access shadow root of container"]
+    D --> E["Find <iframe> inside shadow root"]
+    E --> F["Switch context into iframe"]
+    F --> G["Find <body> inside iframe"]
+    G --> H["Access shadow root of iframe body"]
+    H --> I["Locate <input type='checkbox'> inside shadow root"]
+    I --> J["Click checkbox"]
+    J --> K["Wait and extract cf_clearance from cookies"]
+```
+
 ---
 
 
