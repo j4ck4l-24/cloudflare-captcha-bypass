@@ -4,6 +4,11 @@ Status: Working for both the urls mentioned in the task.
 
 ## Patchright
 
+### The easiest way (Successful)
+Well the easiest way is to just press TAB and then space bar to click the button. :)
+
+
+### Complex Idea
 The idea was to:
 1. Locate the hidden Turnstile response field: `<input type="hidden" name="cf-turnstile-response">`
 2. Traverse to its parent container
